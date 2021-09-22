@@ -1,0 +1,356 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* remove arrows in input field*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  border: none;
+  padding: 0;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]:focus {
+  outline: none !important;
+  border-radius: 4px;
+  /* border: 1px solid white; */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* width */
+.customScroll::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+.customScroll::-webkit-scrollbar-track {
+  background: invisible;
+}
+
+/* Handle */
+.customScroll::-webkit-scrollbar-thumb {
+  background: #699aff;
+}
+
+/* Handle on hover */
+.customScroll::-webkit-scrollbar-thumb:hover {
+  background: #699aff;
+}
+
+.logo,
+.copy,
+.dynamic,
+.social {
+  @apply max-w-600 w-full mx-auto;
+}
+
+.copy {
+  @apply my-16;
+  @apply text-white text-center font-body;
+}
+
+.btn {
+  @apply py-2 px-4 uppercase rounded-lg text-white flex items-center text-xl hover:shadow-md;
+}
+
+@layer utilities {
+  .bg-logo-white {
+    background-image: url("/src/svg/crown.svg");
+  }
+  ,
+  .bg-logo-black {
+    background-image: url("/src/images/circle.png");
+  }
+}
+
+@font-face {
+  font-family: ProximaNovaBlack;
+  src: url("ProximaNovaBlack.otf") format("opentype");
+}
+
+.ProximaNovaBlack {
+  font-family: "ProximaNovaBlack", sans-serif;
+}
+
+@font-face {
+  font-family: ProximaNovaRegular;
+  src: url("ProximaNovaRegular.otf") format("opentype");
+}
+
+.ProximaNovaRegular {
+  font-family: "ProximaNovaRegular", sans-serif;
+}
+
+/* Markdown Styles */
+/* Global */
+.markdown {
+  @apply leading-normal text-sm;
+}
+
+@screen sm {
+  .markdown {
+    @apply text-base;
+  }
+}
+
+@screen lg {
+  .markdown {
+    @apply text-lg;
+  }
+}
+
+/* Headers */
+.markdown h1,
+.markdown h2 {
+  @apply text-xl my-6 font-semibold;
+}
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  @apply text-lg my-3 font-semibold;
+}
+
+@screen sm {
+  .markdown h1,
+  .markdown h2 {
+    @apply text-2xl;
+  }
+  .markdown h3,
+  .markdown h4,
+  .markdown h5,
+  .markdown h6 {
+    @apply text-xl;
+  }
+}
+
+/* Links */
+.markdown a:not(.eject) {
+  @apply text-blue-600;
+}
+.markdown a:hover {
+  @apply underline;
+}
+/* Paragraph */
+.markdown p {
+  @apply mb-4;
+}
+/* Lists */
+.markdown ul,
+.markdown ol {
+  @apply mb-4 ml-8;
+}
+.markdown li > p,
+.markdown li > ul,
+.markdown li > ol {
+  @apply mb-0;
+}
+
+.markdown li {
+  @apply mb-1;
+}
+
+.markdown ol {
+  @apply list-decimal;
+}
+.markdown ul {
+  @apply list-disc;
+}
+/* Blockquotes */
+.markdown blockquote {
+  @apply p-6 bg-blue-100 rounded-lg mb-4 border-l-4 border-blue-300;
+}
+.markdown blockquote > p {
+  @apply mb-0;
+}
+/* Tables */
+.markdown td,
+.markdown th {
+  @apply px-2 py-1 border border-gray-400;
+}
+.markdown tr:nth-child(odd) {
+  @apply bg-gray-100;
+}
+.markdown table {
+  @apply mb-6;
+}
+
+/* Wrap any inline highlights `that are really long`, but don't modify
+   the setting for codeblocks (inside ```), which are rendered in as:
+   <pre><code>...
+*/
+.markdown :not(pre) > code.language-text {
+  white-space: pre-line;
+}
+
+.spin {
+  @apply border border-royalBlue-500 w-8 h-8 block m-2;
+  border-bottom-color: transparent;
+  border-radius: 100%;
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.center {
+  @apply mt-auto mb-auto;
+}
+
+.lq-btn {
+  @apply p-4 py-2.5  rounded-lg text-white text-base;
+}
+
+.btn-white {
+  @apply p-4 py-2.5  rounded-lg text-white text-base;
+}
+
+.btn-red {
+  @apply bg-btnRoyalRed-500 hover:bg-btnHoverRoyalRed-500;
+}
+
+.btn-royal-red {
+  @apply bg-userRank hover:bg-btnHoverRoyalRed-500;
+}
+
+.btn-royal-blue {
+  @apply bg-maxBlue hover:bg-blue-400;
+}
+
+.btn-yellow {
+  @apply bg-dashboardYellow hover:bg-yellow-200;
+}
+
+.btn-green {
+  @apply bg-green-500 hover:bg-green-700;
+}
+
+@layer utilities {
+  .bg-logo-white {
+    background-image: url("/src/svg/crown.svg");
+  }
+  ,
+  .bg-logo-black {
+    background-image: url("/src/images/circle.png");
+  }
+}
+
+.header {
+  background-image: url('../images/geo-noise.png');
+  background-position: center;
+  background-blend-mode: lighten;
+}
+
+.progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.dashboard-progress-bar-outer {
+  width: 300px;
+  height: 10px;
+  background: lightgreen;
+}
+
+.dashboard-progress-bar-inner {
+  --progress-percent: 37%;
+  width: var(--progress-percent);
+  height: 0.125rem;
+  background: #ffb669;
+  position: relative;
+}
+
+.dashboard-tooltip {
+  width: 50px;
+  position: absolute;
+  bottom: -40px;
+  right: -25px;
+  background: pink;
+  padding: 5px;
+  border-radius: 3px;
+}
+.dashboard-tooltip::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 25px;
+  /* right: 50%; */
+  /* margin: auto; */
+  background: red;
+  height: 10px;
+  width: 10px;
+  transform: rotate(45deg);
+}
+
+.tooltip {
+  /* --progress-percent: 45%;
+  width: var(--progress-percent); */
+  height: 0.125rem;
+  background: #ffb669;
+  position: relative;
+  /* display: flex;
+  align-items: center; */
+  /* display: inline-block; */
+}
+
+.tooltip .tooltiptext {
+  width: 80px;
+  background-color: #d8d8d8;
+  color: #10293f;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 6px;
+  padding: 1px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -45px;
+  right: -40px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 45%;
+  margin-left: -6px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 13px solid #d8d8d8;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid red;
+}
